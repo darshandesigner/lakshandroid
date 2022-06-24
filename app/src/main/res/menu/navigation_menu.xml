@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/homeItem"
+            android:icon="@drawable/attendance"
+            android:title="Home"/>
+
+        <item android:id="@+id/attendanceItem"
+            android:icon="@drawable/attendance"
+            android:title="Attendance"/>
+
+        <item android:id="@+id/scheduleItem"
+            android:icon="@drawable/exam_update"
+            android:title="Schedule"/>
+
+        <item android:id="@+id/testScoreItem"
+            android:icon="@drawable/test_report"
+            android:title="Test Score"/>
+
+        <item android:id="@+id/profileItem"
+            android:icon="@drawable/student1"
+            android:title="Profile"/>
+
+        <item android:id="@+id/counsellorItem"
+            android:icon="@drawable/counselor_info"
+            android:title="Counsellor"/>
+
+        <item android:id="@+id/materialItem"
+            android:icon="@drawable/materials"
+            android:title="Material"/>
+
+        <item android:id="@+id/logoutItem"
+            android:title="Logout"/>
+
+    </group>
+
+</menu>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+        >
+
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="55dp"
+            android:layout_marginStart="20dp"
+            android:padding="10dp"
+            android:background="@drawable/profile_shape"
+            android:layout_height="55dp"
+            app:srcCompat="@drawable/student1"
+            android:id="@+id/counselorImage"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="Vatsal Balar"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="30dp"
+            android:fontFamily="@font/roboto_medium"
+            android:textColor="@color/light_blue"
+            android:id="@+id/counselorName"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/attendance_detail_bg_2"
+            android:text="Rating"
+            android:textStyle="bold"
+            android:layout_marginStart="70dp"
+            android:textColor="@color/light_blue"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="10dp"
+            android:id="@+id/counselorRatting"
+            />
+
+
+
+    </LinearLayout>
+
