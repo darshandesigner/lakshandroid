@@ -48,6 +48,17 @@ public class JsonField {
     public static final String COUNSELOR_INFO_ARRAY = "counselor_info";
     public static final String COUNSELOR_NAME = "name";
 
+    //book material
+    public static final String BOOK_MATERIAL_ARRAY = "book_material";
+    public static final String BOOK_NAME = "name";
+    public static final String Book_URL = "pdf";
+    public static final String BOOK_DATE = "updated_at";
+
+
+
+
+
+
 
 
 
