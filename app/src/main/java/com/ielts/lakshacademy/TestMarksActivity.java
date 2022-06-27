@@ -53,9 +53,14 @@ public class TestMarksActivity extends AppCompatActivity {
 
         getTestScore();
 
+        Calendar calendar = Calendar.getInstance();
+        Locale id = new Locale("us","ID");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy",id);
         //DatePicker Hooks
         tvFromDate = findViewById(R.id.tvFromDate);
         tvToDate = findViewById(R.id.tvToDate);
+        tvFromDate.setText(simpleDateFormat.format(calendar.getTime()));
+        tvToDate.setText(simpleDateFormat.format(calendar.getTime()));
 
         //Date Picker Code
 

@@ -45,8 +45,8 @@
         android:background="@drawable/edit_field_bg_2"
         android:paddingVertical="10dp"
         android:paddingStart="10dp"
-        android:paddingEnd="40dp"
-        android:text="April 2002 "
+        android:paddingEnd="20dp"
+        android:text=""
         android:textColor="@color/dark_blue"
         app:layout_constraintStart_toStartOf="@+id/textFrom"
         app:layout_constraintTop_toBottomOf="@+id/textFrom" />
@@ -71,8 +71,8 @@
         android:background="@drawable/edit_field_bg_2"
         android:paddingVertical="10dp"
         android:paddingStart="10dp"
-        android:paddingEnd="40dp"
-        android:text="April 2002 "
+        android:paddingEnd="20dp"
+        android:text=""
         android:textColor="@color/dark_blue"
         app:layout_constraintStart_toStartOf="@+id/textTo"
         app:layout_constraintTop_toBottomOf="@+id/textTo" />
@@ -81,16 +81,28 @@
         android:id="@+id/tvSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:background="@drawable/attendance_detail_bg_2"
+=======
+        android:layout_marginStart="40dp"
+        android:background="@color/soft_orange"
+>>>>>>> 8608fbb9cd323520ea82fd2dca8bb9fd282b31b3
         android:paddingVertical="10dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:text="Submit"
+<<<<<<< HEAD
         android:layout_marginStart="10dp"
         android:textColor="@color/dark_blue"
         app:layout_constraintBottom_toBottomOf="@+id/tvToDate"
         app:layout_constraintStart_toEndOf="@+id/tvToDate"
         app:layout_constraintTop_toTopOf="@+id/tvToDate" />
+=======
+        android:textColor="@color/dark_blue"
+        app:layout_constraintBottom_toBottomOf="@+id/tvToDate"
+        app:layout_constraintStart_toStartOf="@+id/tvToDate"
+        app:layout_constraintTop_toBottomOf="@+id/textTo" />
+>>>>>>> 8608fbb9cd323520ea82fd2dca8bb9fd282b31b3
 
     <LinearLayout
         android:id="@+id/linearLayout2"
