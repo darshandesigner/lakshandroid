@@ -4,8 +4,6 @@ public class TestMarksData {
 
     String Module,exam_date,total_marks,obtain_marks,que_paper,ans_key,exam_detail_id;
 
-
-
     public TestMarksData(String module, String exam_date, String total_marks, String obtain_marks, String que_paper, String ans_key,String exam_detail_id) {
         Module = module;
         this.exam_date = exam_date;
