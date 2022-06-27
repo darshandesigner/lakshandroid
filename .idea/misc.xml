@@ -3,12 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_book_material.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_test_marks.xml" value="0.2421875" />
-        <entry key="app/src/main/res/layout/activity_materials.xml" value="0.13496376811594202" />
-        <entry key="app/src/main/res/layout/book_list.xml" value="0.13496376811594202" />
-        <entry key="app/src/main/res/layout/counselor_list.xml" value="0.13496376811594202" />
-        <entry key="app/src/main/res/layout/fragment_books_materials.xml" value="0.13496376811594202" />
+        <entry key="..\:/android/LakshAcademy/app/src/main/res/drawable/attendance_detail_bg_1.xml" value="0.2385" />
+        <entry key="..\:/android/LakshAcademy/app/src/main/res/layout/activity_test_marks.xml" value="0.23229166666666667" />
       </map>
     </option>
   </component>
