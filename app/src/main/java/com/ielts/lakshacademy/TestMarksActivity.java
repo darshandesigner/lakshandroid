@@ -44,7 +44,7 @@ public class TestMarksActivity extends AppCompatActivity {
     TestMarksAdapter testMarksAdapter;
     ArrayList<TestMarksData> testMarksDataArrayList;
     DatePickerDialog datePickerDialog;
-    TextView tvFromDate;
+    TextView tvFromDate,tvToDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +55,7 @@ public class TestMarksActivity extends AppCompatActivity {
 
         //DatePicker Hooks
         tvFromDate = findViewById(R.id.tvFromDate);
+        tvToDate = findViewById(R.id.tvToDate);
 
         //Date Picker Code
 
@@ -76,13 +77,36 @@ public class TestMarksActivity extends AppCompatActivity {
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
                 Locale id = new Locale("us","ID");
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy",id);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy",id);
 
                 datePickerDialog = new DatePickerDialog(TestMarksActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                        calendar.set(i,i1,i2);
                         tvFromDate.setText(simpleDateFormat.format(calendar.getTime()));
+                    }
+                },year,month,day);
+
+                datePickerDialog.show();
+            }
+        });
+
+        tvToDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar  = Calendar.getInstance();
+                int year = calendar.get(Calendar.YEAR);
+                int month = calendar.get(Calendar.MONTH);
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+                Locale id = new Locale("us","ID");
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy",id);
+
+                datePickerDialog = new DatePickerDialog(TestMarksActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
+                        calendar.set(i,i1,i2);
+                        tvToDate.setText(simpleDateFormat.format(calendar.getTime()));
                     }
                 },year,month,day);
 
