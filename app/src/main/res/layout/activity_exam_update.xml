@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:fitsSystemWindows="true"
     tools:context=".ExamUpdateActivity">
 
     <LinearLayout
@@ -16,8 +17,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="<-"
-            android:background=""
+            android:text="p"
+            android:background="@color/dark_blue"
             android:onClick="previousMonthAction"
             android:textColor="@color/orange"
             android:textStyle="bold"
@@ -37,8 +38,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="->"
-            android:background=""
+            android:text="n"
+            android:background="@color/dark_blue"
             android:onClick="nextMonthAction"
             android:textColor="@color/orange"
             android:textStyle="bold"

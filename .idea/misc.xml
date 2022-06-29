@@ -3,21 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="..\:/android/LakshAcademy/app/src/main/res/drawable/attendance_detail_bg_1.xml" value="0.2385" />
+        <entry key="..\:/android/LakshAcademy/app/src/main/res/layout/activity_exam_update.xml" value="0.1" />
         <entry key="..\:/android/LakshAcademy/app/src/main/res/layout/activity_test_marks.xml" value="0.23229166666666667" />
-=======
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_book_material.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_exam_update.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_test_marks.xml" value="0.264" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_update.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/activity_user_select.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/calender_cell.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/counselor_list.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/fragment_books_materials.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/home_toolbar.xml" value="0.2421875" />
-        <entry key="..\:/android/myproject/lakshandroid/app/src/main/res/layout/test_marks_list.xml" value="0.2421875" />
->>>>>>> 8608fbb9cd323520ea82fd2dca8bb9fd282b31b3
       </map>
     </option>
   </component>
