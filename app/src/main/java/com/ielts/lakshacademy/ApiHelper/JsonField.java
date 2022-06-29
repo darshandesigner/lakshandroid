@@ -62,6 +62,11 @@ public class JsonField {
 
     //certificate
     public static final String CERTIFCATE = "bondcerti";
+    
+    //test date
+    public static final String TEST_START_DATE = "start_date";
+    public static final String TEST_END_DATE = "end_date";
+
 
 
 
