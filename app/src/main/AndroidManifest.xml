@@ -14,6 +14,9 @@
         android:theme="@style/Theme.LakshAcademy"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".PdfViewActivity"
             android:exported="false" />
         <activity
