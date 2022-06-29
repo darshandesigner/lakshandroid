@@ -54,6 +54,16 @@ public class JsonField {
     public static final String Book_URL = "pdf";
     public static final String BOOK_DATE = "updated_at";
 
+    //video material
+    public static final String VIDEO_MATERIAL_ARRAY = "video_material";
+    public static final String VIDEO_NAME = "name";
+    public static final String VIDEO_URL = "video";
+    public static final String VIDEO_DATE = "updated_at";
+
+    //certificate
+    public static final String CERTIFCATE = "bondcerti";
+
+
 
 
 

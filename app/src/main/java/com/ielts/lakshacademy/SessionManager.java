@@ -20,6 +20,8 @@ public class SessionManager {
     public static final String ID = "id";
     public static final String EMAIL = "email";
     public static final String BATCH_ID = "batch_id";
+    public static final String UNIQUE_ID = "unique_id";
+    public static final String NAME = "stu_name";
 
     public SessionManager(Context context,String sessionName){
         this.context = context;
@@ -28,12 +30,14 @@ public class SessionManager {
 
     }
 
-    public void createLoginSession(String id,String email,String batch_id){
+    public void createLoginSession(String id,String email,String batch_id,String unique_id,String name){
 
         editor.putBoolean(IS_LOGIN,true);
         editor.putString(ID,id);
         editor.putString(EMAIL,email);
         editor.putString(BATCH_ID,batch_id);
+        editor.putString(UNIQUE_ID,unique_id);
+        editor.putString(NAME,name);
         editor.commit();
 
     }
@@ -44,6 +48,8 @@ public class SessionManager {
         studentData.put(ID,studentSession.getString(ID,null));
         studentData.put(EMAIL,studentSession.getString(EMAIL,null));
         studentData.put(BATCH_ID,studentSession.getString(BATCH_ID,null));
+        studentData.put(UNIQUE_ID,studentSession.getString(UNIQUE_ID,null));
+        studentData.put(NAME,studentSession.getString(NAME,null));
 
         return studentData;
     }
