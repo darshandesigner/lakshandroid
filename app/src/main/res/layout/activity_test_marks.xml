@@ -81,18 +81,20 @@
         android:id="@+id/tvSubmit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:background="@color/soft_orange"
+        android:background="@drawable/attendance_detail_bg_2"
         android:paddingVertical="10dp"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:text="Submit"
+        android:layout_marginStart="10dp"
         android:textColor="@color/dark_blue"
         app:layout_constraintBottom_toBottomOf="@+id/tvToDate"
-        app:layout_constraintStart_toStartOf="@+id/tvToDate"
-        app:layout_constraintTop_toBottomOf="@+id/textTo" />
+        app:layout_constraintStart_toEndOf="@+id/tvToDate"
+        app:layout_constraintTop_toTopOf="@+id/tvToDate" />
+
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"

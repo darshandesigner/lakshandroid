@@ -1,5 +1,6 @@
 package com.ielts.lakshacademy;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,6 +15,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -37,6 +39,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
+import java.util.Map;
 
 public class TestMarksActivity extends AppCompatActivity {
 
@@ -44,34 +47,82 @@ public class TestMarksActivity extends AppCompatActivity {
     TestMarksAdapter testMarksAdapter;
     ArrayList<TestMarksData> testMarksDataArrayList;
     DatePickerDialog datePickerDialog;
-    TextView tvFromDate,tvToDate;
+    TextView tvFromDate,tvToDate,tvSubmit;
+    SessionManager sessionManager;
+    HashMap<String,String> studentSessionDetail;
+    String student_id;
+    String s_date,e_date;
+    Locale id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_marks);
 
+        sessionManager = new SessionManager(TestMarksActivity.this,SessionManager.STUDENT_LOGIN_KEY);
+        studentSessionDetail = sessionManager.getStudentDataFromSession();
+         student_id = studentSessionDetail.get(SessionManager.ID);
+        id = new Locale("us","ID");
+
         getTestScore();
 
         Calendar calendar = Calendar.getInstance();
-        Locale id = new Locale("us","ID");
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy",id);
+        SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd",id);
+
+
         //DatePicker Hooks
         tvFromDate = findViewById(R.id.tvFromDate);
         tvToDate = findViewById(R.id.tvToDate);
+        tvSubmit=findViewById(R.id.tvSubmit);
         tvFromDate.setText(simpleDateFormat.format(calendar.getTime()));
         tvToDate.setText(simpleDateFormat.format(calendar.getTime()));
+        s_date = simpleDateFormat1.format(calendar.getTime());
+        e_date = simpleDateFormat1.format(calendar.getTime());
 
-        //Date Picker Code
 
-//        tvFromDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Calendar calendar = Calendar.getInstance();
-//
-//
-//            }
-//        });
+        tvSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(TestMarksActivity.this, s_date+"|"+e_date, Toast.LENGTH_SHORT).show();
+
+                Log.d("start_date",s_date);
+                Log.d("start_date",e_date);
+
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, WebUrl.TEST_SCORE_DATE_URL, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        parseJson(response.toString());
+                        Toast.makeText(TestMarksActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                        error.printStackTrace();
+                        Toast.makeText(TestMarksActivity.this,error.toString(), Toast.LENGTH_SHORT).show();
+
+                    }
+                }){
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+
+                        Map<String,String> params = new HashMap<>();
+                        params.put(JsonField.STUDENT_ID,student_id);
+                        params.put(JsonField.TEST_START_DATE,s_date);
+                        params.put(JsonField.TEST_END_DATE,e_date);
+
+                        return params;
+                    }
+                };
+
+                RequestQueue requestQueue = Volley.newRequestQueue(TestMarksActivity.this);
+                requestQueue.add(stringRequest);
+            }
+        });
+
 
         tvFromDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,14 +132,16 @@ public class TestMarksActivity extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                Locale id = new Locale("us","ID");
                 SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy",id);
+                SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd",id);
 
                 datePickerDialog = new DatePickerDialog(TestMarksActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                        calendar.set(i,i1,i2);
                         tvFromDate.setText(simpleDateFormat.format(calendar.getTime()));
+                        s_date = simpleDateFormat1.format(calendar.getTime());
+
                     }
                 },year,month,day);
 
@@ -104,14 +157,17 @@ public class TestMarksActivity extends AppCompatActivity {
                 int month = calendar.get(Calendar.MONTH);
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
 
-                Locale id = new Locale("us","ID");
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MMM yyyy",id);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd MMM yyyy",id);
+                SimpleDateFormat simpleDateFormat1 = new SimpleDateFormat("yyyy-MM-dd",id);
+
 
                 datePickerDialog = new DatePickerDialog(TestMarksActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
                         calendar.set(i,i1,i2);
                         tvToDate.setText(simpleDateFormat.format(calendar.getTime()));
+                        e_date = simpleDateFormat1.format(calendar.getTime());
+
                     }
                 },year,month,day);
 
@@ -148,9 +204,9 @@ public class TestMarksActivity extends AppCompatActivity {
 
     private void getTestScore(){
 
-        SessionManager sessionManager = new SessionManager(TestMarksActivity.this,SessionManager.STUDENT_LOGIN_KEY);
-        HashMap<String,String> studentSessionDetail = sessionManager.getStudentDataFromSession();
-        String student_id = studentSessionDetail.get(SessionManager.ID);
+//        SessionManager sessionManager = new SessionManager(TestMarksActivity.this,SessionManager.STUDENT_LOGIN_KEY);
+
+//        String student_id = studentSessionDetail.get(SessionManager.ID);
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, WebUrl.TEST_SCORE_URL+student_id, new Response.Listener<String>() {
             @Override

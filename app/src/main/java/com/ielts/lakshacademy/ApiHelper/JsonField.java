@@ -54,6 +54,11 @@ public class JsonField {
     public static final String Book_URL = "pdf";
     public static final String BOOK_DATE = "updated_at";
 
+    //test date
+    public static final String TEST_START_DATE = "start_date";
+    public static final String TEST_END_DATE = "end_date";
+
+
 
 
 
