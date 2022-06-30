@@ -164,7 +164,6 @@ public class BooksMaterialsFragment extends Fragment {
         bookAdapter = new BookAdapter(getContext(),arrayList);
         bookList.setAdapter(bookAdapter);
 
-
     }
 
 

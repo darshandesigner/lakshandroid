@@ -152,7 +152,7 @@ public class StudentLoginActivity extends AppCompatActivity {
 
 
                 SessionManager sessionManager = new SessionManager(StudentLoginActivity.this,SessionManager.STUDENT_LOGIN_KEY);
-                sessionManager.createLoginSession(id,email,batch_id);
+                sessionManager.createLoginSession(id,email,batch_id,unique_id,name);
 //                Toast.makeText(this, "4", Toast.LENGTH_SHORT).show();
 
 
