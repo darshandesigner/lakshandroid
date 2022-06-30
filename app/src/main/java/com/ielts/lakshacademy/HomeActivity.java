@@ -221,6 +221,11 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent1);
                 break;
 
+            case R.id.profileItem:
+                Intent intent2 = new Intent(HomeActivity.this,ProfileActivity.class);
+                startActivity(intent2);
+                break;
+
 
         }
 
