@@ -48,6 +48,10 @@
         android:fontFamily="@font/roboto_medium"
         android:textColor="@color/light_blue"
         android:id="@+id/bookTime"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:scrollHorizontally="true"
         />
 
 </LinearLayout>
@@ -58,12 +62,11 @@
         android:background="@drawable/attendance_detail_bg_2"
         android:text="open"
         android:textStyle="bold"
-        android:layout_marginStart="85dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/light_blue"
         android:paddingHorizontal="10dp"
         android:paddingVertical="10dp"
-        android:id="@+id/counselorRatting"
+        android:id="@+id/openBook"
         android:autoSizeTextType="uniform"
         />
 
